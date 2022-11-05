@@ -117,3 +117,22 @@
     align-items: center;
     gap: 10px;
 }
+.foodCardBottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.foodCardBottomLeft{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+
+}
+.foodCardBottomLeft img{
+    width: 300px;
+    height: 200px;
+
+
+}

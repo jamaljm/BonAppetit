@@ -24,28 +24,28 @@ export default function Sidebar() {
             <Link to="/products" className="link">
             <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
-              Products
+              
             </li>
             </Link>
               {/* <Link to="" className="link"> */}
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                Users
+                
               </li>
             {/* </Link> */}
             {/* <Link to="" className="link"> */}
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
-                Products
+                
               </li>
             {/* </Link> */}
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
-              Transactions
+              
             </li>
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
-              Reports
+              
             </li>
           </ul>
         </div>
