@@ -56,9 +56,28 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 10px;
+  gap: 15px;
 }
 .topAvatar2{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+.sidebarprofile p{
+  font-size: 15px;
+  font-weight: 600;
+  color: #555;
+}
+.sidebarprofileinfo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+}
+.profileinfocard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }

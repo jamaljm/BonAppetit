@@ -37,13 +37,21 @@ export default function Foodcard() {
                                 <LocationOn />
                                 <span className="foodInfoKey">Edappally   </span>
                             </div>
-                            <span className="foodInfoValue">Quantiy : 10KG</span>
+                            <span className="foodInfoValue">Time Left : 1hr</span>
                         </div>
+                   
+                        <div className="foodinfobottombutton">
+                            <button className="foodinfobutton">Accept</button>
+                            <button className="foodinfobutton">Deliver This</button>
+                    </div>
+                        
                     </div>
                 </div>
+              
 
 
             </div>
+              
         </div>
       
     );

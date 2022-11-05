@@ -1,0 +1,19 @@
+.foodinfobottombutton{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 23px;
+
+
+}
+.foodinfobottombutton button{
+    width: 50%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e7deff;
+    color: rgb(54, 54, 54);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
