@@ -29,7 +29,17 @@ export default function FeaturedInfo() {
                 <img src="https://images.pexels.com/photos/6260921/pexels-photo-6260921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="foodimage" />
               </div>
               <div className="foodCardBottomRight">
-                
+                <h2>Biriyani With Chicken fry</h2>
+                <div className="foodInfo">
+                  <div className="foodInfoTop">
+                    <span className="foodInfoKey">Ingredients:</span>
+                    <span className="foodInfoValue">Chicken, Rice, Spices</span>
+                  </div>
+                  <div className="foodInfoBottom">
+                    <span className="foodInfoKey">Calories:</span>
+                    <span className="foodInfoValue">500</span>
+                  </div>
+                </div>
               </div>
 
 
