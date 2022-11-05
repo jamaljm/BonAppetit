@@ -13,6 +13,9 @@
   border-radius: 20px;
   cursor: pointer;
   padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
 }
 .featuredItem2 {
@@ -65,8 +68,48 @@
     width: 100%;
     padding: 20px;
     display: flex;
+    gap: 5px;
     
 }
 .searchBox input{
     width: 80%;
+        padding: 10px;
+            border-radius: 20px;
+}
+.searchBox button{
+    width: 20%;
+    background: rgb(240, 231, 255);
+    border: none;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+
+}
+.foodCardsection{
+            border-radius: 20px;
+            width: 100%;
+}
+.foodCard{
+    background: #fff;
+        border-radius: 20px;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+
+
+}
+.foodCardTop{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+.foodCardTopLeft{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
 }
