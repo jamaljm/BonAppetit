@@ -1,5 +1,5 @@
 import "./featuredInfo.css";
-import { CalendarToday } from "@material-ui/icons";
+import { CalendarToday,LocationOn  } from "@material-ui/icons";
 
 
 export default function FeaturedInfo() {
@@ -20,7 +20,9 @@ export default function FeaturedInfo() {
             </div>
             <div className="foodCardTopRight">
               <CalendarToday className="foodCardIcon" />
-              <span className="foodCardPercent">20-09-2022</span>
+                <span className="foodCardPercent">20-09-2022</span>
+                <span className="foodCardPercent1">10:23 PM</span>
+                
             </div>
           </div>
             <div className="foodCardBottom">
@@ -32,12 +34,18 @@ export default function FeaturedInfo() {
                 <h2>Biriyani With Chicken fry</h2>
                 <div className="foodInfo">
                   <div className="foodInfoTop">
-                    <span className="foodInfoKey">Ingredients:</span>
-                    <span className="foodInfoValue">Chicken, Rice, Spices</span>
+                    <div className="foodInfoChild">
+                    <span className="foodInfoKey">Food Type:   </span>
+                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Non_veg_symbol.svg/2048px-Non_veg_symbol.svg.png" alt="" className="topAvatar1" />
+                    </div>
+                      <span className="foodInfoValue">Quantiy : 10KG</span>
                   </div>
                   <div className="foodInfoBottom">
-                    <span className="foodInfoKey">Calories:</span>
-                    <span className="foodInfoValue">500</span>
+                    <div className="foodInfoChild">
+                      <LocationOn />
+                    <span className="foodInfoKey">Edappally   </span>
+                    </div>
+                      <span className="foodInfoValue">Quantiy : 10KG</span>
                   </div>
                 </div>
               </div>
