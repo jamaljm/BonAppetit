@@ -6,7 +6,7 @@
 }
 
 .featuredItem1 {
-  flex: 2.5;
+  flex: 2;
   margin: 0px 20px 0px 0px;
   padding: 30px;
   border-radius: 20px;
@@ -19,10 +19,8 @@
 .featuredItem2 {
     flex: 1;
     margin: 0px 20px;
-    padding: 30px;
     border-radius: 20px;
     cursor: pointer;
-    background-color: white;
 
 }
 .featuredTitle{
@@ -170,4 +168,12 @@
     justify-content: space-between;
     gap: 10px;
     padding: 10px;
+}
+.widgetSm1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 20px;
 }

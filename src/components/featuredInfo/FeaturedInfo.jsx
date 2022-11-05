@@ -1,6 +1,8 @@
 import "./featuredInfo.css";
 import { CalendarToday, LocationOn } from "@material-ui/icons";
 import Foodcard from '../foodcard/foodcard';
+import WidgetSm from "../widgetSm/WidgetSm";
+
  
 
 
@@ -25,7 +27,9 @@ export default function FeaturedInfo() {
         
       </div>
       <div className="featuredItem2">
-   
+        <div className="widgetSm1">
+          <WidgetSm />
+          </div>
         </div>
 
               
