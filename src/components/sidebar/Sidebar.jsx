@@ -13,6 +13,11 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
+        <div className="sidebarprofile">
+          <img src="https://avatars.githubusercontent.com/u/34004150?v=4" alt="" className="topAvatar2" />
+          <span className="sidebarprofile-name">Jamal</span>
+
+        </div>
         <div className="sidebarMenu">
            <ul className="sidebarList">
             <Link to="/" className="link">
