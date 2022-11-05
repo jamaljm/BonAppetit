@@ -1,5 +1,5 @@
 import "./featuredInfo.css";
-import { CalendarTodayIcon } from "@material-ui/icons";
+import { CalendarToday } from "@material-ui/icons";
 
 export default function FeaturedInfo() {
   return (
@@ -18,8 +18,8 @@ export default function FeaturedInfo() {
               <span className="foodCardSubTitle">Jamal P</span>
             </div>
             <div className="foodCardTopRight">
-              <CalendarTodayIcon className="foodCardIcon" />
-              <span className="foodCardPercent">+10%</span>
+              <CalendarToday className="foodCardIcon" />
+              <span className="foodCardPercent">20-09-2022</span>
             </div>
           </div>
           <div className="foodCardBottom">
