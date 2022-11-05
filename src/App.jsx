@@ -6,17 +6,20 @@ import Home from "./pages/home/Home";
 import Products from "./pages/products/product";
 import "./app.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 
 
 
 function App() {
+
+  const [auth, setAuth] = useState(true);
   return (
 <>
    
     <BrowserRouter>
     <div className="App">
-    <Navbar/>
+          {auth&&<Navbar/>}
     <div className="container">
     <Sidebar/>
       <Routes>
