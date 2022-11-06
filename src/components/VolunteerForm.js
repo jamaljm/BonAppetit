@@ -14,7 +14,7 @@ const VolunteerForm = () => {
     phoneNumber: "",
     city: "",
     state: "",
-    file: null,
+    
   });
   const navigate = useNavigate();
 
@@ -36,18 +36,17 @@ const VolunteerForm = () => {
   }
 
   const handleSubmit = (e) => {
-    const formData = new FormData();
-    formData.append("name", state.name);
-    formData.append("phoneNumber", state.phoneNumber);
-    formData.append("city", state.city);
-    formData.append("state", state.state);
-    formData.append("file", state.file);
+    
+    
+    
     e.preventDefault();
-    console.log("bruh")
+    console.log("bruh");
+    navigate("/");
+    window.location.reload();
     axios
       .put(
         "http://localhost:5000/api/volunteer/createProfile",
-        formData,
+        state,
         config
       )
       .then((res) => {
@@ -56,7 +55,6 @@ const VolunteerForm = () => {
           window.localStorage.setItem("token", res.data.token);
           window.localStorage.setItem("auth", "true");
 
-          navigate("/volunteer");
           setLogin(res.data.message);
         }
 
@@ -72,10 +70,11 @@ const VolunteerForm = () => {
 
   return (
     <div className="volunteerform">
-      
       <h1>Volunteer Form</h1>
       <form
-        onSubmit={()=>{handleSubmit()}}
+        onSubmit={() => {
+          handleSubmit();
+        }}
         encType="multipart/form-data"
         class="w-full max-w-lg m-auto justify-center items-center"
       >

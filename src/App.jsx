@@ -33,7 +33,7 @@ function App() {
               {auth && <Route path="/" element={<Home />} />}
               <Route path="/signup" element={<SignupPage />} />
 
-              <Route path="/volunteer" element={<VolunteerForm />} />
+              {!auth && <Route path="/volunteer" element={<VolunteerForm />} />}
               <Route exact path="/login" element={<Login />} />
             </Routes>
           </div>
