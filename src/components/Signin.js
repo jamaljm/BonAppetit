@@ -1,74 +1,75 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
-import "./signin.css";
-
+import React, { useState } from "react"
+import axios from "axios"
+import { Navigate, useNavigate } from "react-router-dom"
+import "./signin.css"
 
 function SignupPage() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   const [state, setState] = useState({
     email: "",
 
     password: "",
-  });
+  })
 
-  const [login, setLogin] = useState("");
-  const [token, setToken] = useState("");
-  const [loginorg, setLoginorg] = useState("");
+  const [login, setLogin] = useState("")
+  const [token, setToken] = useState("")
+  const [loginorg, setLoginorg] = useState("")
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setState((prevState) => ({
       ...prevState,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   const handleSubmit1 = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     axios
       .post("http://localhost:5000/api/auth/volunteer/signup", state)
       .then((res) => {
         if (res.data.message) {
-          setToken(res.data.token);
-          console.log(res.data.token);
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
+          setToken(res.data.token)
+          console.log(res.data.token)
+          window.localStorage.setItem("token", res.data.token)
+          window.localStorage.setItem("auth", "true")
 
-          navigate("/volunteer");
-          setLogin(res.data.message);
+          navigate("/")
+          setLogin(res.data.message)
+          window.location.reload()
         }
 
-        console.log(res);
+        console.log(res)
         // handle success
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err)
 
         // handle error
-      });
-  };
+      })
+  }
 
   const handleSubmitorg = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     axios
       .post("http://localhost:5000/api/auth/volunteer/signup", state)
       .then((res) => {
         if (res.data.message) {
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
-          navigate("/volunteer");
-          setLoginorg(res.data.message);
+          window.localStorage.setItem("token", res.data.token)
+          window.localStorage.setItem("auth", "true")
+          navigate("/")
+          setLoginorg(res.data.message)
+          window.location.reload()
         }
 
-        console.log(res);
+        console.log(res)
         // handle success
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err)
 
         // handle error
-      });
-  };
+      })
+  }
 
   //create a drop down with 2 options
 
@@ -76,12 +77,9 @@ function SignupPage() {
     <div className="signupcontainer">
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmit1}>
-          <h5 className="signupheading">
-            Sign up for Volunteers
-          </h5>
+          <h5 className="signupheading">Sign up for Volunteers</h5>
           <div>
-            <label className="">
-            </label>
+            <label className=""></label>
             <input
               type="email"
               name="email"
@@ -93,7 +91,6 @@ function SignupPage() {
             />
           </div>
           <div>
-           
             <input
               type="password"
               name="password"
@@ -104,37 +101,26 @@ function SignupPage() {
               required
             />
           </div>
-          
-          <button
-            type="submit"
-            className=""
-          >
+
+          <button type="submit" className="">
             Signup
           </button>
           <div className="alreadyaccou">
             Already have account?{" "}
-            <a
-              href="#"
-              className=""
-            >
+            <a href="#" className="">
               Login
             </a>
           </div>
-             <div>
-        <h1>{login}</h1>
-      </div>
+          <div>
+            <h1>{login}</h1>
+          </div>
         </form>
-      
       </div>
-     
 
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmitorg}>
-          <h5 className="signupheading">
-            Sign Up For Contributers
-          </h5>
+          <h5 className="signupheading">Sign Up For Contributers</h5>
           <div>
-           
             <input
               type="email"
               name="email"
@@ -144,11 +130,9 @@ function SignupPage() {
               className=""
               required
               def
-              
             />
           </div>
           <div>
-            
             <input
               type="password"
               name="password"
@@ -159,19 +143,13 @@ function SignupPage() {
               required
             />
           </div>
-         
-          <button
-            type="submit"
-            className=""
-          >
+
+          <button type="submit" className="">
             Signup
           </button>
           <div className="">
             Already have account?{" "}
-            <a
-              href="#"
-              className=""
-            >
+            <a href="#" className="">
               Login
             </a>
           </div>
@@ -181,7 +159,7 @@ function SignupPage() {
         <h1>{loginorg}</h1>
       </div>
     </div>
-  );
+  )
 }
 
-export default SignupPage;
+export default SignupPage
