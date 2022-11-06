@@ -2,6 +2,7 @@ import "./featuredInfo.css";
 import { CalendarToday, LocationOn } from "@material-ui/icons";
 import Foodcard from '../foodcard/foodcard';
 import WidgetSm from "../widgetSm/WidgetSm";
+import Addrequest from "../Addrequest";
 
  
 
@@ -15,6 +16,7 @@ export default function FeaturedInfo() {
           <button>Search</button>
         </div>
         <div className="foodCardsection">
+          <Addrequest/>
 
          < Foodcard />
          < Foodcard />

@@ -6,10 +6,11 @@ import SignupPage from "./components/Signin"
 import Home from "./pages/home/Home"
 import Products from "./pages/products/product"
 import "./app.css"
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 function App() {
+  
   const [auth, setAuth] = useState(
     false || window.localStorage.getItem("auth") === "true"
   )
@@ -17,6 +18,7 @@ function App() {
   function Logout() {
     window.localStorage.clear()
   }
+ 
   return (
     <>
       <button className="p-2 rounded-lg outline " onClick={Logout}>
@@ -39,6 +41,5 @@ function App() {
       </BrowserRouter>
     </>
   )
-}
-
+  }
 export default App
