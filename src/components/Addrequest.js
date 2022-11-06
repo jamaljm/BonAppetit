@@ -15,8 +15,7 @@ const Addrequest = () => {
     desc: "",
     numberOfServing: "",
     isNonVeg: "",
-
-
+    expiry: "",
     phoneNumber: "",
     address: "",
     city: "",
@@ -34,7 +33,7 @@ const Addrequest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/post",  state,config)
+      .post("http://localhost:5000/api/post", state, config)
       .then((res) => {
         if (res.data.message) {
           console.log(res.data.message);
@@ -44,6 +43,7 @@ const Addrequest = () => {
         }
 
         console.log(res);
+        navigate("/");
         // handle success
       })
       .catch((err) => {
@@ -84,7 +84,13 @@ const Addrequest = () => {
           onChange={handleChange}
           placeholder="Enter Veg or Nonveg"
         />
-    
+        <input
+          type="date"
+          name="expiry"
+          value={state.expiry}
+          onChange={handleChange}
+          placeholder="Enter expiry"
+        />
         <input
           type="text"
           value={state.city}

@@ -17,6 +17,7 @@ function App() {
 
   function Logout() {
     window.localStorage.clear()
+    window.location.reload();
   }
  
   return (
@@ -31,7 +32,7 @@ function App() {
             {auth && <Sidebar />}
             <Routes>
               {auth && <Route path="/" element={<Home />} />}
-              <Route path="/signup" element={<SignupPage />} />
+              {!auth && <Route path="/signup" element={<SignupPage />} />}
 
               {!auth && <Route path="/volunteer" element={<VolunteerForm />} />}
               <Route exact path="/login" element={<Login />} />

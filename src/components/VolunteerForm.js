@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 const VolunteerForm = () => {
-  const token = window.localStorage.getItem("token");
+  const token = window.localStorage.getItem("token")
   const config = {
     headers: { Authorization: `Bearer ${token}` },
-  };
+  }
 
   const [state, setState] = useState({
     name: "",
@@ -14,61 +14,55 @@ const VolunteerForm = () => {
     phoneNumber: "",
     city: "",
     state: "",
-    
-  });
-  const navigate = useNavigate();
+    file: null,
+  })
+  const navigate = useNavigate()
 
-  const [login, setLogin] = useState("");
-  const [loginorg, setLoginorg] = useState("");
+  const [login, setLogin] = useState("")
+  const [loginorg, setLoginorg] = useState("")
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target
     setState((prevState) => ({
       ...prevState,
       [name]: value,
-    }));
-  };
+    }))
+  }
 
   function handleFileChange(e) {
     setState({
       ...state,
       file: e.target.files[0],
-    });
+    })
   }
 
   const handleSubmit = (e) => {
-    
-    
-    
-    e.preventDefault();
-    console.log("bruh");
-    navigate("/");
-    window.location.reload();
+    navigate("/")
+    window.location.reload()
+    e.preventDefault()
+    console.log("bruh")
     axios
-      .put(
-        "http://localhost:5000/api/volunteer/createProfile",
-        state,
-        config
-      )
+      .put("http://localhost:5000/api/volunteer/createProfile", state, config)
       .then((res) => {
         if (res.data.message) {
-          console.log(res.data.token);
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
+          console.log(res.data.token)
+          window.localStorage.setItem("token", res.data.token)
+          window.localStorage.setItem("auth", "true")
 
           setLogin(res.data.message);
         }
 
-        console.log(res);
+        console.log(res)
         // handle success
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err)
 
         // handle error
-      });
-  };
+      })
+  }
 
   return (
+
     <div className="volunteerform">
       <h1>Volunteer Form</h1>
       <form
@@ -211,7 +205,7 @@ const VolunteerForm = () => {
       </form>
       {login}
     </div>
-  );
-};
+  )
+}
 
-export default VolunteerForm;
+export default VolunteerForm
