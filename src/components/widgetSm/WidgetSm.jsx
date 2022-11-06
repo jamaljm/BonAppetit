@@ -28,7 +28,7 @@ export default function WidgetSm() {
              <div className="contributerprofilewidget">
        <li className="widgetSmListItem">
           <img
-            src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
+            src="https://media.istockphoto.com/id/1309328823/photo/headshot-portrait-of-smiling-male-employee-in-office.jpg?s=612x612&w=0&k=20&c=kPvoBm6qCYzQXMAn9JUtqLREXe9-PlZyMl9i-ibaVuY="
             alt=""
             className="widgetSmImg"
           />

@@ -48,7 +48,7 @@ const VolunteerForm = () => {
           window.localStorage.setItem("token", res.data.token)
           window.localStorage.setItem("auth", "true")
 
-          setLogin(res.data.message)
+          setLogin(res.data.message);
         }
 
         console.log(res)
@@ -64,11 +64,10 @@ const VolunteerForm = () => {
   return (
 
     <div className="volunteerform">
-
       <h1>Volunteer Form</h1>
       <form
         onSubmit={() => {
-          handleSubmit()
+          handleSubmit();
         }}
         encType="multipart/form-data"
         class="w-full max-w-lg m-auto justify-center items-center"

@@ -17,6 +17,8 @@ function App() {
 
   function Logout() {
     window.localStorage.clear()
+    
+    window.location.reload();
   }
  
   return (
