@@ -52,12 +52,12 @@ export default function FeaturedInfo() {
                       alt=""
                       className="topAvatar"
                     />
-                    <span className="foodCardSubTitle">{item.email}</span>
+                    <span className="foodCardSubTitle">{item.userId.email}</span>
                   </div>
                   <div className="foodCardTopRight">
                     <CalendarToday className="foodCardIcon" />
-                    <span className="foodCardPercent">20-09-2022</span>
-                    <span className="foodCardPercent1">10:23 PM</span>
+                    <span className="foodCardPercent">{item.createdOn.slice(0,10)}</span>
+                    <span className="foodCardPercent1">{item.createdOn.slice(11,16)}</span>
                   </div>
                 </div>
                 <div className="foodCardBottom">
@@ -90,7 +90,7 @@ export default function FeaturedInfo() {
                           <span className="foodInfoKey">{item.city} </span>
                         </div>
                         <span className="foodInfoValue">
-                          Time Left : {new  Date(item.expiryDate).getDate()} days
+                          Expiry: {item.expiry.slice(0,10)} 
                         </span>
                       </div>
 
