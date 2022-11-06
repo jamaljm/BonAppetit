@@ -62,7 +62,9 @@ const VolunteerForm = () => {
   }
 
   return (
-    <div>
+
+    <div className="volunteerform">
+
       <h1>Volunteer Form</h1>
       <form
         onSubmit={() => {
