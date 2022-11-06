@@ -1,10 +1,11 @@
 import "./featuredInfo.css";
 import { CalendarToday, LocationOn } from "@material-ui/icons";
 import Foodcard from "../foodcard/foodcard";
-import WidgetSm from "../widgetSm/WidgetSm";
+import WidgetSm from "../widgetSm/WidgetSm;
 import axios from "axios";
 import Addrequest from "../Addrequest";
 import { useEffect, useState } from "react";
+import Addrequest from "../Addrequest";
 
 export default function FeaturedInfo() {
   const token = window.localStorage.getItem("token");
