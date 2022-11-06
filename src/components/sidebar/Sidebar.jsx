@@ -6,6 +6,7 @@ import {
   Storefront,
   AttachMoney,
   BarChart,
+  FoodBank
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import { LocationOn,Call } from "@material-ui/icons";
@@ -37,7 +38,7 @@ export default function Sidebar() {
             <Link to="/products" className="link">
             <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
-              
+              Contribute Food
             </li>
             </Link>
               {/* <Link to="" className="link"> */}

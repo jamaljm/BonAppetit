@@ -30,6 +30,9 @@ border-radius: 20px;
   list-style: none;
   padding: 5px;
   font-size: 18px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebarListItem {
@@ -38,6 +41,7 @@ border-radius: 20px;
   display: flex;
   align-items: center;
   border-radius: 10px;
+    color: rgb(0, 0, 0);
 }
 
 .sidebarListItem.active,
