@@ -40,8 +40,6 @@ export default function FeaturedInfo() {
           <button>Search</button>
         </div>
         <div className="foodCardsection">
-          <Addrequest />
-
           {data.map((item) => (
             <div>
               <div className="foodCard">
@@ -52,12 +50,16 @@ export default function FeaturedInfo() {
                       alt=""
                       className="topAvatar"
                     />
-                    <span className="foodCardSubTitle">{item.userId.email}</span>
+                    <span className="foodCardSubTitle">{item.userId.name}</span>
                   </div>
                   <div className="foodCardTopRight">
                     <CalendarToday className="foodCardIcon" />
-                    <span className="foodCardPercent">{item.createdOn.slice(0,10)}</span>
-                    <span className="foodCardPercent1">{item.createdOn.slice(11,16)}</span>
+                    <span className="foodCardPercent">
+                      {item.createdOn.slice(0, 10)}
+                    </span>
+                    <span className="foodCardPercent1">
+                      {item.createdOn.slice(11, 16)}
+                    </span>
                   </div>
                 </div>
                 <div className="foodCardBottom">
@@ -90,7 +92,7 @@ export default function FeaturedInfo() {
                           <span className="foodInfoKey">{item.city} </span>
                         </div>
                         <span className="foodInfoValue">
-                          Expiry: {item.expiry.slice(0,10)} 
+                          Expiry: {item.expiry.slice(0, 10)}
                         </span>
                       </div>
 
@@ -108,6 +110,7 @@ export default function FeaturedInfo() {
       </div>
       <div className="featuredItem2">
         <div className="widgetSm1">
+          <Addrequest />
           <WidgetSm />
         </div>
       </div>

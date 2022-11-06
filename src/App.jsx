@@ -24,16 +24,15 @@ function App() {
   return (
     <>
       <button className="p-2 rounded-lg outline " onClick={Logout}>
-        Toggle Auth
-      </button>
+.      </button>
       <BrowserRouter>
         <div className="App">
           {auth && <Navbar />}
           <div className="container">
             {auth && <Sidebar />}
             <Routes>
-              {auth && <Route path="/" element={<Home />} />}
-              {!auth && <Route path="/signup" element={<SignupPage />} />}
+              {auth && <Route path="/home" element={<Home />} />}
+              {!auth && <Route path="/" element={<SignupPage />} />}
 
               {!auth && <Route path="/volunteer" element={<VolunteerForm />} />}
               <Route exact path="/login" element={<Login />} />

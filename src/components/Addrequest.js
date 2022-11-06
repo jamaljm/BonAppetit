@@ -33,7 +33,11 @@ const Addrequest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/post", state, config)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co//api/post",
+        state,
+        config
+      )
       .then((res) => {
         if (res.data.message) {
           console.log(res.data.message);
@@ -55,6 +59,8 @@ const Addrequest = () => {
 
   return (
     <div>
+      
+    
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -62,6 +68,7 @@ const Addrequest = () => {
           value={state.title}
           onChange={handleChange}
           placeholder="Enter title"
+          style={{ width: "100%" }}
         />
         <input
           type="text"
@@ -69,6 +76,7 @@ const Addrequest = () => {
           onChange={handleChange}
           name="desc"
           placeholder="Enter your email"
+          style={{ width: "50%" }}
         />
         <input
           type="text"
@@ -76,6 +84,7 @@ const Addrequest = () => {
           placeholder="Enter Quantity"
           value={state.numberOfServing}
           onChange={handleChange}
+          style={{ width: "50%" }}
         />
         <input
           type="text"
@@ -83,6 +92,7 @@ const Addrequest = () => {
           value={state.isNonVeg}
           onChange={handleChange}
           placeholder="Enter Veg or Nonveg"
+          style={{ width: "50%" }}
         />
         <input
           type="date"
@@ -90,6 +100,7 @@ const Addrequest = () => {
           value={state.expiry}
           onChange={handleChange}
           placeholder="Enter expiry"
+          style={{ width: "50%" }}
         />
         <input
           type="text"

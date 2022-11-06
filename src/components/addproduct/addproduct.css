@@ -8,6 +8,7 @@
     border-radius: 20px;
     background-color: #fff;
     padding: 30px;
+    width: 100%;
 
 }
 .featuredItem {
@@ -51,6 +52,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+
     
   }
   
@@ -62,6 +64,7 @@
   
   .addProductItem > input {
     padding: 10px;
+    width: 100%;
   }
   
   .addProductItem > select {
@@ -99,4 +102,14 @@ input::file-selector-button{
     width: 60%;
     color: #fff;
     border: none;
+}
+.productList button {
+    background-color: #676bb6;
+    padding: 10px;
+    border-radius: 20px;
+    width: 60%;
+    color: #fff;
+    border: none;
+    width: 100%;
+
 }

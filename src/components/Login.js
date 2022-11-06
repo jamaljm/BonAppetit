@@ -24,7 +24,10 @@ function Login() {
     navigate("/dashboard");
     window.location.reload();
     axios
-      .post("http://localhost:5000/api/auth/volunteer/login", state)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co//api/auth/volunteer/login",
+        state
+      )
       .then((res) => {
         if (res.data.message) {
           setLogin(res.data.message);
@@ -46,7 +49,10 @@ function Login() {
   const handleSubmitorg = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/api/auth/org/login", state)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co//api/auth/org/login",
+        state
+      )
       .then((res) => {
         if (res.data.message) {
           setLoginorg(res.data.message);

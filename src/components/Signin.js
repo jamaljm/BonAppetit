@@ -26,50 +26,56 @@ function SignupPage() {
   const handleSubmit1 = (e) => {
     e.preventDefault()
     axios
-      .post("http://localhost:5000/api/auth/volunteer/signup", state)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co//api/auth/volunteer/signup",
+        state
+      )
       .then((res) => {
         if (res.data.message) {
-          setToken(res.data.token)
-          console.log(res.data.token)
-          window.localStorage.setItem("token", res.data.token)
-          window.localStorage.setItem("auth", "true")
+          setToken(res.data.token);
+          console.log(res.data.token);
+          window.localStorage.setItem("token", res.data.token);
+          window.localStorage.setItem("auth", "true");
 
-          navigate("/")
-          setLogin(res.data.message)
-          window.location.reload()
+          navigate("/");
+          setLogin(res.data.message);
+          window.location.reload();
         }
 
-        console.log(res)
+        console.log(res);
         // handle success
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
 
         // handle error
-      })
+      });
   }
 
   const handleSubmitorg = (e) => {
     e.preventDefault()
     axios
-      .post("http://localhost:5000/api/auth/volunteer/signup", state)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co/api/auth/volunteer/signup",
+        state
+      )
       .then((res) => {
         if (res.data.message) {
-          window.localStorage.setItem("token", res.data.token)
-          window.localStorage.setItem("auth", "true")
-          navigate("/")
-          setLoginorg(res.data.message)
-          window.location.reload()
+          window.localStorage.setItem("token", res.data.token);
+          window.localStorage.setItem("auth", "true");
+          navigate("/home");
+          setLoginorg(res.data.message);
+          window.location.reload();
         }
 
-        console.log(res)
+        console.log(res);
         // handle success
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
 
         // handle error
-      })
+      });
   }
 
   //create a drop down with 2 options
@@ -79,7 +85,7 @@ function SignupPage() {
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmit1}>
           <h5 className="signupheading">Sign up for Volunteers</h5>
-          <div>
+          <div className="asdf">
             <label className=""></label>
             <input
               type="name"
@@ -129,8 +135,8 @@ function SignupPage() {
 
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmitorg}>
-          <h5 className="signupheading">Sign Up For Contributers</h5>
-          <div>
+          <h5 className="signupheading">Sign Up For Organizations</h5>
+          <div className="asdf">
             <input
               type="name"
               name="name"
@@ -148,7 +154,6 @@ function SignupPage() {
               onChange={handleChange}
               className=""
               required
-              
             />
           </div>
           <div>
