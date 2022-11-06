@@ -6,6 +6,7 @@ import "./signin.css"
 function SignupPage() {
   const navigate = useNavigate()
   const [state, setState] = useState({
+    name: "",
     email: "",
 
     password: "",
@@ -81,6 +82,15 @@ function SignupPage() {
           <div>
             <label className=""></label>
             <input
+              type="name"
+              name="name"
+              placeholder="John Doe"
+              value={state.name}
+              onChange={handleChange}
+              className=""
+              required
+            />
+            <input
               type="email"
               name="email"
               placeholder="abc@gmail.com"
@@ -122,6 +132,15 @@ function SignupPage() {
           <h5 className="signupheading">Sign Up For Contributers</h5>
           <div>
             <input
+              type="name"
+              name="name"
+              placeholder="John Doe"
+              value={state.name}
+              onChange={handleChange}
+              className=""
+              required
+            />
+            <input
               type="email"
               name="email"
               placeholder="abc@gmail.com"
@@ -129,7 +148,7 @@ function SignupPage() {
               onChange={handleChange}
               className=""
               required
-              def
+              
             />
           </div>
           <div>
@@ -159,7 +178,7 @@ function SignupPage() {
         <h1>{loginorg}</h1>
       </div>
     </div>
-  )
+  );
 }
 
 export default SignupPage
