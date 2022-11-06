@@ -8,7 +8,7 @@ import {
   BarChart,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import { LocationOn } from "@material-ui/icons";
+import { LocationOn,Call } from "@material-ui/icons";
 
 
 export default function Sidebar() {
@@ -20,13 +20,9 @@ export default function Sidebar() {
           <p className="sidebarprofile-name">Jamal</p>
           <div className="sidebarprofileinfo">
             <div className="profileinfocard">
-            <LocationOn />
-            <span className="foodInfoKey">Edappally   </span>
-            </div>
-             <div className="profileinfocard">
-            <LocationOn />
-            <span className="foodInfoKey">Edappally   </span>
-            </div>
+              <button>View Profile</button>
+             </div>
+          
           </div>
 
         </div>
