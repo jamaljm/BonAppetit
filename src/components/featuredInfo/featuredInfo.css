@@ -77,10 +77,11 @@
     width: 80%;
         padding: 10px;
             border-radius: 20px;
+            border: 1px solid #b0b0b0;
 }
 .searchBox button{
     width: 20%;
-    background: rgb(240, 231, 255);
+    background: #ffc52952;
     border: none;
     color: #000;
     font-weight: 600;
@@ -105,7 +106,7 @@
         flex-direction: column;
         gap: 0px;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
-        border: .5px;
+        border: .5px solid rgb(166, 166, 166);
 
 
 }

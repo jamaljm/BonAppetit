@@ -15,14 +15,12 @@ export default function WidgetSm() {
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">Jamal</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
           </div>
         </li>
      
         <li>
           <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
+            Point : 234
           </button>
           </li>
                   </div>
