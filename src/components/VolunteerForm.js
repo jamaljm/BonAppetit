@@ -71,8 +71,8 @@ const VolunteerForm = () => {
   };
 
   return (
-    <div>
-      {token}
+    <div className="volunteerform">
+      
       <h1>Volunteer Form</h1>
       <form
         onSubmit={()=>{handleSubmit()}}
