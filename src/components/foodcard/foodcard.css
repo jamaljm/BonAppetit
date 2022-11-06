@@ -11,9 +11,13 @@
     height: 40px;
     border-radius: 10px;
     border: none;
-    background-color: #e7deff;
-    color: rgb(54, 54, 54);
+    background-color: #fe734c;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     font-size: 15px;
     cursor: pointer;
+}
+.foodCardBottomRight h2{
+    font-family: 'poppins';
+    font-weight: 600;
 }

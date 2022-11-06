@@ -1,7 +1,7 @@
 .container{
     display: flex;
     margin-top: 10px;
-    background: rgb(246 248 250);
+    background: #fff;
 }
 
 
@@ -10,6 +10,6 @@
     color: inherit;
 }
 .App{
-    background: rgb(246 248 250);
+    background: #fff;
     font-family: 'Poppins', sans-serif;
 }
