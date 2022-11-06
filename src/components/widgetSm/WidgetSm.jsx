@@ -9,7 +9,7 @@ export default function WidgetSm() {
         <div className="contributerprofilewidget">
        <li className="widgetSmListItem">
           <img
-            src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
+            src="https://avatars.githubusercontent.com/u/34004150?v=4"
             alt=""
             className="widgetSmImg"
           />
@@ -33,15 +33,13 @@ export default function WidgetSm() {
             className="widgetSmImg"
           />
           <div className="widgetSmUser">
-            <span className="widgetSmUsername">Jamal</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
+            <span className="widgetSmUsername">Sam</span>
           </div>
         </li>
      
         <li>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
+            <button className="widgetSmButton">
+            Point : 134
           </button>
           </li>
         </div>
@@ -50,20 +48,18 @@ export default function WidgetSm() {
              <div className="contributerprofilewidget">
        <li className="widgetSmListItem">
           <img
-            src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
+            src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
             alt=""
             className="widgetSmImg"
           />
           <div className="widgetSmUser">
-            <span className="widgetSmUsername">Jamal</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
+            <span className="widgetSmUsername">Nazim</span>
           </div>
         </li>
      
         <li>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
+            <button className="widgetSmButton">
+            Point : 134
           </button>
           </li>
         </div>
@@ -71,20 +67,18 @@ export default function WidgetSm() {
               <div className="contributerprofilewidget">
        <li className="widgetSmListItem">
           <img
-            src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
+            src="https://i.pinimg.com/originals/d9/c2/66/d9c266d772be275b3debdda807239dca.jpg"
             alt=""
             className="widgetSmImg"
           />
           <div className="widgetSmUser">
-            <span className="widgetSmUsername">Jamal</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
+            <span className="widgetSmUsername">jozeph</span>
           </div>
         </li>
      
         <li>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
+             <button className="widgetSmButton">
+            Point : 101
           </button>
           </li>
         </div>
@@ -92,20 +86,18 @@ export default function WidgetSm() {
               <div className="contributerprofilewidget">
        <li className="widgetSmListItem">
           <img
-            src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
+            src="https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
             alt=""
             className="widgetSmImg"
           />
           <div className="widgetSmUser">
-            <span className="widgetSmUsername">Jamal</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
+            <span className="widgetSmUsername">Allen</span>
           </div>
         </li>
      
         <li>
-          <button className="widgetSmButton">
-            <Visibility className="widgetSmIcon" />
-            Display
+         <button className="widgetSmButton">
+            Point : 34
           </button>
           </li>
         </div>

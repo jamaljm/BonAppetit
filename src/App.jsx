@@ -19,9 +19,9 @@ function App() {
   }
   return (
     <>
-      <button className="p-2 rounded-lg outline " onClick={Logout}>
+      {/* <button className="p-2 rounded-lg outline " onClick={Logout}>
         Toggle Auth
-      </button>
+      </button> */}
       <BrowserRouter>
         <div className="App">
           {auth && <Navbar />}
