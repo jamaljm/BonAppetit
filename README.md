@@ -1,4 +1,4 @@
-Hosted Link: https://carbon-ecommerce.netlify.app/
+Hosted Link: 
 
 # Getting Started with Create React App
 
