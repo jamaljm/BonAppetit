@@ -4,6 +4,7 @@ import VolunteerForm from "./components/VolunteerForm"
 import Login from "./components/Login"
 import SignupPage from "./components/Signin"
 import Home from "./pages/home/Home"
+import React from "react"
 import Products from "./pages/products/product"
 import "./app.css"
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom"
@@ -15,8 +16,14 @@ function App() {
     false || window.localStorage.getItem("auth") === "true"
   )
 
+  const navigate = useNavigate()
+
   function Logout() {
+    
+    
     window.localStorage.clear()
+    navigate('/')
+    
     
     window.location.reload();
   }
@@ -25,7 +32,7 @@ function App() {
     <>
       <button className="p-2 rounded-lg outline " onClick={Logout}>
 .      </button>
-      <BrowserRouter>
+    
         <div className="App">
           {auth && <Navbar />}
           <div className="container">
@@ -39,7 +46,7 @@ function App() {
             </Routes>
           </div>
         </div>
-      </BrowserRouter>
+     
     </>
   )
   }

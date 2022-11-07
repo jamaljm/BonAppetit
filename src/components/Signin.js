@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./signin.css";
 
 function SignupPage() {
@@ -56,31 +56,7 @@ function SignupPage() {
       });
   };
 
-  const handleSubmitorg = (e) => {
-    e.preventDefault();
-    axios
-      .post(
-        `https://bon-appetit-server.alapanoski.repl.co/api/auth/${type}/signup`,
-        state
-      )
-      .then((res) => {
-        if (res.data.message) {
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
-          navigate("/home");
-          setLoginorg(res.data.message);
-          window.location.reload();
-        }
-
-        console.log(res);
-        // handle success
-      })
-      .catch((err) => {
-        console.log(err);
-
-        // handle error
-      });
-  };
+ 
 
   const handleType = (e) => {
     setType(e.target.value);
@@ -135,9 +111,9 @@ function SignupPage() {
           </button>
           <div className="alreadyaccou">
             Already have account?{" "}
-            <a href="#" className="">
+            <Link to="/login"   className="">
               Login
-            </a>
+            </Link>
           </div>
           <div>
             <h1>{login}</h1>
