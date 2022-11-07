@@ -19,7 +19,7 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">Foodie</span>
+          <span className="logo">Bon Appetit</span>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">

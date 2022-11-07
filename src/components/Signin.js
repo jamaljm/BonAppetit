@@ -65,6 +65,15 @@ function SignupPage() {
 
   return (
     <div className="signupcontainer">
+      <div className="Aboutcard">
+        <h1>Bon Appetit</h1>
+        <h2>Where Hunger Stops.</h2>
+        
+        <button>About us </button>
+
+     
+
+      </div>
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmit1}>
           <h5 className="signupheading">Sign up </h5>
@@ -93,8 +102,8 @@ function SignupPage() {
               <option value="volunteer">Volunteer</option>
               <option value="org">Organization</option>
             </select>
-          </div>
-          <div>
+          
+          
             <input
               type="password"
               name="password"
@@ -104,7 +113,7 @@ function SignupPage() {
               className=""
               required
             />
-          </div>
+          
 
           <button type="submit" className="">
             Signup
@@ -115,7 +124,7 @@ function SignupPage() {
               Login
             </Link>
           </div>
-          <div>
+          
             <h1>{login}</h1>
           </div>
         </form>

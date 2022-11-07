@@ -9,6 +9,7 @@ import Products from "./pages/products/product"
 import "./app.css"
 import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom"
 import { useState } from "react"
+import Landingpage from "./components/Landingpage.js/Landingpage";
 
 function App() {
   
@@ -22,23 +23,21 @@ function App() {
  
   return (
     <>
-  
-    
-        <div className="App">
-          {auth && <Navbar />}
-          <div className="container">
-            {auth && <Sidebar />}
-            <Routes>
-              {auth && <Route path="/home" element={<Home />} />}
-              {!auth && <Route path="/" element={<SignupPage />} />}
+      <div className="App">
+        {auth && <Navbar />}
+        <div className="container">
+          {auth && <Sidebar />}
+          <Routes>
+            <Route path="*" component={<Landingpage/>} />
+            {auth && <Route exact path="/home" element={<Home />} />}
+            {!auth && <Route exact path="/" element={<SignupPage />} />}
 
-              {!auth && <Route path="/volunteer" element={<VolunteerForm />} />}
-              <Route exact path="/login" element={<Login />} />
-            </Routes>
-          </div>
+            {!auth && <Route path="/volunteer" element={<VolunteerForm />} />}
+            <Route exact path="/login" element={<Login />} />
+          </Routes>
         </div>
-     
+      </div>
     </>
-  )
+  );
   }
 export default App

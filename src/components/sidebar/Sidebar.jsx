@@ -29,13 +29,13 @@ export default function Sidebar() {
         </div>
         <div className="sidebarMenu">
            <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/home" className="link">
             <li className="sidebarListItem active">
               <Widgets className="sidebarIcon active" />
               Home
             </li>
             </Link>
-            <Link to="/products" className="link">
+            <Link to="/home" className="link">
             <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
               Contribute Food
