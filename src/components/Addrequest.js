@@ -34,7 +34,7 @@ const Addrequest = () => {
     e.preventDefault();
     axios
       .post(
-        "https://bon-appetit-server.alapanoski.repl.co//api/post",
+        "https://bon-appetit-server.alapanoski.repl.co/api/post",
         state,
         config
       )

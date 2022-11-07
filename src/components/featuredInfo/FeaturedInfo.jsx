@@ -15,7 +15,7 @@ export default function FeaturedInfo() {
 
   const getPosts = async () => {
     axios
-      .get("http://localhost:5000/api/post", config)
+      .get("https://bon-appetit-server.alapanoski.repl.co/api/post", config)
       .then((res) => {
         console.log(res.data.data);
         setData(res.data.data);
