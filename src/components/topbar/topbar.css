@@ -60,3 +60,14 @@
 .topbar-icon{
   font-size: 31px !important;
 }
+
+button{
+  background-color: #ffc52952;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  margin: 0px 0px 0px 15px;
+  border-radius: 10px;
+}

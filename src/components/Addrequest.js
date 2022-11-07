@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import  './addrequest.css' ;
 
 const Addrequest = () => {
   const navigate = useNavigate();
@@ -58,17 +59,16 @@ const Addrequest = () => {
   };
 
   return (
-    <div>
-      
-    
-      <form onSubmit={handleSubmit}>
+    <div className="container-input">
+      <form onSubmit={handleSubmit} className="container-input">
+        <h1>Submit Request</h1>
         <input
           type="text"
           name="title"
           value={state.title}
           onChange={handleChange}
           placeholder="Enter title"
-          style={{ width: "100%" }}
+          style={{ width: "50%" }}
         />
         <input
           type="text"
@@ -108,6 +108,7 @@ const Addrequest = () => {
           onChange={handleChange}
           name="city"
           placeholder="Enter your city"
+          style={{ width: "50%" }}
         />
         <input
           type="text"
@@ -115,6 +116,7 @@ const Addrequest = () => {
           onChange={handleChange}
           name="state"
           placeholder="Enter your state"
+          style={{ width: "50%" }}
         />
         <input
           type="text"
@@ -122,6 +124,7 @@ const Addrequest = () => {
           placeholder="Enter your Phone Number"
           value={state.contactInfo}
           onChange={handleChange}
+          style={{ width: "50%" }}
         />
         <button type="submit">Submit</button>
         {login}

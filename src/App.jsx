@@ -18,20 +18,11 @@ function App() {
 
   const navigate = useNavigate()
 
-  function Logout() {
-    
-    
-    window.localStorage.clear()
-    navigate('/')
-    
-    
-    window.location.reload();
-  }
+  
  
   return (
     <>
-      <button className="p-2 rounded-lg outline " onClick={Logout}>
-.      </button>
+  
     
         <div className="App">
           {auth && <Navbar />}
