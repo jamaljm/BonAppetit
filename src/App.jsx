@@ -32,8 +32,8 @@ function App() {
             {auth && <Route exact path="/home" element={<Home />} />}
             {!auth && <Route exact path="/" element={<SignupPage />} />}
 
-            {!auth && <Route path="/volunteer" element={<VolunteerForm />} />}
-            <Route exact path="/login" element={<Login />} />
+            {<Route path="/volunteer" element={<VolunteerForm />} />}
+            {!auth && <Route exact path="/login" element={<Login />} />}
           </Routes>
         </div>
       </div>

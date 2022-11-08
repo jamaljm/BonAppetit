@@ -6,7 +6,7 @@ import "./signin.css";
 function Login() {
   const navigate = useNavigate();
   const [state, setState] = useState({
-    name: "",
+ 
     email: "",
 
     password: "",
@@ -68,16 +68,7 @@ function Login() {
         <form className="signupform" onSubmit={handleSubmit1}>
           <h5 className="signupheading">Login </h5>
           <div className="asdf">
-            <label className=""></label>
-            <input
-              type="name"
-              name="name"
-              placeholder="John Doe"
-              value={state.name}
-              onChange={handleChange}
-              className=""
-              required
-            />
+           
             <input
               type="email"
               name="email"
@@ -87,11 +78,7 @@ function Login() {
               className=""
               required
             />
-            <label for="dog-names">I am a </label>
-            <select name="type" id="dog-names" onChange={handleType}>
-              <option value="volunteer">Volunteer</option>
-              <option value="org">Organization</option>
-            </select>
+           
           </div>
           <div>
             <input

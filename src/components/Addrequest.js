@@ -5,6 +5,7 @@ import "./addrequest.css";
 
 const Addrequest = () => {
   const navigate = useNavigate();
+  const [type, setType] = useState("true");
 
   const token = window.localStorage.getItem("token");
   const config = {
@@ -15,7 +16,7 @@ const Addrequest = () => {
     title: "",
     desc: "",
     numberOfServing: "",
-    isNonVeg: "",
+    isNonVeg: "true",
     expiry: "",
     phoneNumber: "",
     address: "",
@@ -32,6 +33,9 @@ const Addrequest = () => {
   };
 
   const [isActive, setIsActive] = useState(false);
+  const handleType = (e) => {
+    setType(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,12 +49,11 @@ const Addrequest = () => {
         if (res.data.message) {
           console.log(res.data.message);
 
-          navigate("/volunteer");
           setLogin(res.data.message);
         }
 
         console.log(res);
-        navigate("/");
+        navigate("/home");
         // handle success
       })
       .catch((err) => {
@@ -96,14 +99,21 @@ const Addrequest = () => {
               onChange={handleChange}
               required
             />
-            <input
-              type="text"
+            <label for="dog-names">Veg or Non-Veg</label>
+            <select
               name="isNonVeg"
-              value={state.isNonVeg}
+              id="dog-names"
               onChange={handleChange}
-              placeholder="Enter Veg or Nonveg"
-              required
-            />
+              value={state.isNonVeg}
+            >
+              <option name="isNonVeg" value="true">
+                Non-Veg
+              </option>
+              <option name="isNonVeg" value="false">
+                Veg
+              </option>
+            </select>
+
             <input
               type="date"
               name="expiry"

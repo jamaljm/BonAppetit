@@ -51,6 +51,7 @@ function SignupPage() {
       })
       .catch((err) => {
         console.log(err);
+        setLogin("User already Exists",err.message);
 
         // handle error
       });
@@ -125,13 +126,13 @@ function SignupPage() {
             </Link>
           </div>
           
-            <h1>{login}</h1>
+            <p className="text-black">{login}</p>
           </div>
         </form>
       </div>
 
       <div>
-        <h1>{loginorg}</h1>
+        <p>{loginorg}</p>
       </div>
     </div>
   );

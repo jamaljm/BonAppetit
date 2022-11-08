@@ -40,7 +40,7 @@ export default function FeaturedInfo() {
           <button>Search</button>
         </div>
         <div className="foodCardsection">
-          {data.map((item) => (
+          {data.slice(0).reverse().map((item) => (
             <div>
               <div className="foodCard">
                 <div className="foodCardTop">
