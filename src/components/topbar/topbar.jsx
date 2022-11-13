@@ -1,17 +1,15 @@
 import React from "react";
 import "./topbar.css";
-import { NotificationsNone, SettingsApplications} from "@material-ui/icons";
+import { NotificationsNone, SettingsApplications } from "@material-ui/icons";
 import { useNavigate } from "react-router-dom";
 
 export default function Topbar() {
   const navigate = useNavigate();
 
-  
-
   function Logout() {
-     window.localStorage.removeItem("token");
-     window.localStorage.removeItem("auth");
-     navigate("/");
+    window.localStorage.removeItem("token");
+    window.localStorage.removeItem("auth");
+    navigate("/login");
 
     window.location.reload();
   }

@@ -40,6 +40,7 @@ function SignupPage() {
           console.log(res.data.token);
           window.localStorage.setItem("token", res.data.token);
           window.localStorage.setItem("auth", "true");
+          window.localStorage.setItem("name", state.name);
 
           navigate("/home");
           setLogin(res.data.message);
@@ -51,13 +52,11 @@ function SignupPage() {
       })
       .catch((err) => {
         console.log(err);
-        setLogin("User already Exists",err.message);
+        setLogin("User already Exists", err.message);
 
         // handle error
       });
   };
-
- 
 
   const handleType = (e) => {
     setType(e.target.value);
@@ -69,11 +68,8 @@ function SignupPage() {
       <div className="Aboutcard">
         <h1>Bon Appetit</h1>
         <h2>Where Hunger Stops.</h2>
-        
+
         <button>About us </button>
-
-     
-
       </div>
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmit1}>
@@ -103,8 +99,7 @@ function SignupPage() {
               <option value="volunteer">Volunteer</option>
               <option value="org">Organization</option>
             </select>
-          
-          
+
             <input
               type="password"
               name="password"
@@ -114,18 +109,17 @@ function SignupPage() {
               className=""
               required
             />
-          
 
-          <button type="submit" className="">
-            Signup
-          </button>
-          <div className="alreadyaccou">
-            Already have account?{" "}
-            <Link to="/login"   className="">
-              Login
-            </Link>
-          </div>
-          
+            <button type="submit" className="">
+              Signup
+            </button>
+            <div className="alreadyaccou">
+              Already have account?{" "}
+              <Link to="/login" className="">
+                Login
+              </Link>
+            </div>
+
             <p className="text-black">{login}</p>
           </div>
         </form>

@@ -14,6 +14,7 @@ const VolunteerForm = () => {
     phoneNumber: "",
     city: "",
     state: "",
+    file :""
   });
   const navigate = useNavigate();
 
@@ -33,11 +34,7 @@ const VolunteerForm = () => {
     e.preventDefault();
     console.log("bruh");
     axios
-      .put(
-        "https://bon-appetit-server.alapanoski.repl.co/api/volunteer/createProfile",
-        state,
-        config
-      )
+      .put("http://localhost:5000/api/volunteer/createProfile", state, config)
       .then((res) => {
         if (res.data.message) {
           console.log(res.data.token);
@@ -63,8 +60,8 @@ const VolunteerForm = () => {
     const formData = new FormData();
     formData.append("file", file);
     axios
-      .post(
-        "https://localhost:5000/api/volunteer",
+      .put(
+        "http://localhost:5000/api/volunteer/createProfile",
         formData,
         config
       )

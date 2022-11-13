@@ -6,7 +6,6 @@ import "./signin.css";
 function Login() {
   const navigate = useNavigate();
   const [state, setState] = useState({
- 
     email: "",
 
     password: "",
@@ -40,6 +39,7 @@ function Login() {
           console.log(res.data.token);
           window.localStorage.setItem("token", res.data.token);
           window.localStorage.setItem("auth", "true");
+          window.localStorage.setItem("name", res.data.user.name);
 
           navigate("/home");
           setLogin(res.data.message);
@@ -68,7 +68,6 @@ function Login() {
         <form className="signupform" onSubmit={handleSubmit1}>
           <h5 className="signupheading">Login </h5>
           <div className="asdf">
-           
             <input
               type="email"
               name="email"
@@ -78,7 +77,6 @@ function Login() {
               className=""
               required
             />
-           
           </div>
           <div>
             <input
@@ -93,7 +91,7 @@ function Login() {
           </div>
 
           <button type="submit" className="">
-            Signup
+            Login
           </button>
           <div className="alreadyaccou">
             New here?{" "}
