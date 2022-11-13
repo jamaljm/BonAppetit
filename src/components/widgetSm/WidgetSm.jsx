@@ -19,7 +19,7 @@ export default function WidgetSm() {
           </li>
 
           <li>
-            <button className="widgetSmButton">Point : 234</button>
+            <button className="widgetSmButton">Point : 264</button>
           </li>
         </div>
 
@@ -31,7 +31,24 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Jamal</span>
+              <span className="widgetSmUsername">Jozef</span>
+            </div>
+          </li>
+
+          <li>
+            <button className="widgetSmButton">Point : 255</button>
+          </li>
+        </div>
+
+        <div className="contributerprofilewidget">
+          <li className="widgetSmListItem">
+            <img
+              src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
+              alt=""
+              className="widgetSmImg"
+            />
+            <div className="widgetSmUser">
+              <span className="widgetSmUsername">Allen</span>
             </div>
           </li>
 
@@ -48,12 +65,12 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Jamal</span>
+              <span className="widgetSmUsername">Nazim</span>
             </div>
           </li>
 
           <li>
-            <button className="widgetSmButton">Point : 245</button>
+            <button className="widgetSmButton">Point : 220</button>
           </li>
         </div>
 
@@ -65,29 +82,12 @@ export default function WidgetSm() {
               className="widgetSmImg"
             />
             <div className="widgetSmUser">
-              <span className="widgetSmUsername">Jamal</span>
+              <span className="widgetSmUsername">Samuel</span>
             </div>
           </li>
 
           <li>
-            <button className="widgetSmButton">Point : 245</button>
-          </li>
-        </div>
-
-        <div className="contributerprofilewidget">
-          <li className="widgetSmListItem">
-            <img
-              src="https://pbs.twimg.com/profile_images/664169149002874880/z1fmxo00_400x400.jpg"
-              alt=""
-              className="widgetSmImg"
-            />
-            <div className="widgetSmUser">
-              <span className="widgetSmUsername">Jamal</span>
-            </div>
-          </li>
-
-          <li>
-            <button className="widgetSmButton">Point : 245</button>
+            <button className="widgetSmButton">Point : 200</button>
           </li>
         </div>
       </ul>

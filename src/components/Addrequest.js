@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./addrequest.css";
+import { Add, Close } from "@material-ui/icons";
+import {AiFillCaretDown, AiFillCloseCircle, AiOutlineClose} from 'react-icons/ai'
 
 const Addrequest = () => {
   const navigate = useNavigate();
@@ -65,11 +67,13 @@ const Addrequest = () => {
 
   return (
     <div className="container-input">
-      <div className="inner-container">
-        <h1 onClick={() => setIsActive(!isActive)}>
-          Add Request{"\t"}
-          {isActive ? "X" : "+"}
-        </h1>
+      <div className="inner-container" onClick={() => setIsActive(!isActive)}>
+        <h1>Add Request</h1>
+        {isActive ? (
+          <AiOutlineClose size={40} />
+        ) : (
+          <AiFillCaretDown size={40} />
+        )}
       </div>
 
       {isActive && (
