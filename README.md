@@ -96,7 +96,7 @@ People who are willing to donate food have said to have faced the following prob
 
 
 ### Built With
-[![My Skills](https://skills.thijs.gg/icons?i=java,kotlin,nodejs,figma&theme=light)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=react,mongodb,css,nodejs,figma&theme=light)](https://skills.thijs.gg)
 
 
 
