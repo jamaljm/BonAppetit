@@ -98,7 +98,9 @@ Our platform aims to solve all these problems by
 
 
 ### Built With
-[![My Skills](https://skills.thijs.gg/icons?i=react,mongodb,css,nodejs,figma&theme=light)](https://skills.thijs.gg)
+[![My Skills](https://skills.thijs.gg/icons?i=react,mongodb,css,nodejs,figma,netlify&theme=light)](https://skills.thijs.gg)
+
+<img src="https://img.shields.io/badge/replit-667881?style=for-the-badge&logo=replit&logoColor=white"></img>
 
 
 
