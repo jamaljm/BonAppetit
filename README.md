@@ -25,7 +25,7 @@
   <p align="center">
     A platform for the good-hearted!
     <br/>
-    <a href="https://bonappletea.netlify.app/home"><strong>Check Out Our Web App. »</strong></a>
+    <a href="https://bonappletea.netlify.app"><strong>Check Out Our Web App. »</strong></a>
     <br />
     <br />
   
