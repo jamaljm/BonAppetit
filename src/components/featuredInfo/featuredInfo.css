@@ -90,6 +90,17 @@
     border-radius: 20px;
 
 }
+.searchBox button:disabled{
+    width: 20%;
+    background: #494846c3;
+    border: none;
+    color: #000;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 20px;
+
+}
 .foodCardsection{
             border-radius: 20px;
             width: 100%;
@@ -177,8 +188,16 @@
 .widgetSm1{
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
     background: #fff;
     border-radius: 20px;
+}
+
+.foodinfobutton:disabled{
+    background-color: rgba(211, 208, 208, 0);
+    outline: solid 1px #000;
+    color: rgb(8, 7, 7);
+    pointer-events: none;
+    cursor: none;
 }

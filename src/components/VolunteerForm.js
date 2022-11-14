@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const VolunteerForm = () => {
-  const token = window.localStorage.getItem("token")
+  const token = window.localStorage.getItem("token");
   const config = {
     headers: { Authorization: `Bearer ${token}` },
-  }
+  };
 
   const [state, setState] = useState({
     name: "",
@@ -14,63 +14,74 @@ const VolunteerForm = () => {
     phoneNumber: "",
     city: "",
     state: "",
-    file: null,
-  })
-  const navigate = useNavigate()
+    file :""
+  });
+  const navigate = useNavigate();
 
-  const [login, setLogin] = useState("")
-  const [loginorg, setLoginorg] = useState("")
+  const [login, setLogin] = useState("");
+  const [loginorg, setLoginorg] = useState("");
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setState((prevState) => ({
       ...prevState,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  function handleFileChange(e) {
-    setState({
-      ...state,
-      file: e.target.files[0],
-    })
-  }
+
 
   const handleSubmit = (e) => {
-    navigate("/")
-    window.location.reload()
-    e.preventDefault()
-    console.log("bruh")
+    e.preventDefault();
+    console.log("bruh");
     axios
       .put("http://localhost:5000/api/volunteer/createProfile", state, config)
       .then((res) => {
         if (res.data.message) {
-          console.log(res.data.token)
-          window.localStorage.setItem("token", res.data.token)
-          window.localStorage.setItem("auth", "true")
+          console.log(res.data.token);
+          window.localStorage.setItem("token", res.data.token);
+          window.localStorage.setItem("auth", "true");
 
-          setLogin(res.data.message)
+          setLogin(res.data.message);
+          navigate("/home");
         }
 
-        console.log(res)
+        console.log(res);
         // handle success
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
 
         // handle error
+      });
+  };
+
+  const handleFile = (e) => {
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    axios
+      .put(
+        "http://localhost:5000/api/volunteer/createProfile",
+        formData,
+        config
+      )
+      .then((res) => {
+        console.log(res);
+        // handle success
       })
-  }
+      .catch((err) => {
+        console.log(err);
+
+        // handle error
+      });
+  };
+
 
   return (
-
     <div className="volunteerform">
-
       <h1>Volunteer Form</h1>
       <form
-        onSubmit={() => {
-          handleSubmit()
-        }}
-        encType="multipart/form-data"
+        onSubmit={handleSubmit}
         class="w-full max-w-lg m-auto justify-center items-center"
       >
         <div class="flex flex-wrap -mx-3 mb-6">
@@ -180,22 +191,9 @@ const VolunteerForm = () => {
             />
           </div>
 
-          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-zip"
-            >
-              Upload Image
-            </label>
-            <input
-              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-zip"
-              name="file"
-              type="file"
-              placeholder="90210"
-              onChange={handleFileChange}
-            />
-          </div>
+          <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0"></div>
+        <input type="file" onChange={handleFile} />
+        
         </div>
         <button
           type="submit"
@@ -206,7 +204,7 @@ const VolunteerForm = () => {
       </form>
       {login}
     </div>
-  )
-}
+  );
+};
 
-export default VolunteerForm
+export default VolunteerForm;

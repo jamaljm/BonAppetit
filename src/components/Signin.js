@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./signin.css";
-
 
 function SignupPage() {
   const navigate = useNavigate();
   const [state, setState] = useState({
+    name: "",
     email: "",
 
     password: "",
   });
 
+  const [type, setType] = useState("volunteer");
   const [login, setLogin] = useState("");
   const [token, setToken] = useState("");
   const [loginorg, setLoginorg] = useState("");
@@ -25,17 +26,25 @@ function SignupPage() {
 
   const handleSubmit1 = (e) => {
     e.preventDefault();
+    console.log(type, state);
     axios
-      .post("http://localhost:5000/api/auth/volunteer/signup", state)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co/api/auth/" +
+          type +
+          "/signup",
+        state
+      )
       .then((res) => {
         if (res.data.message) {
           setToken(res.data.token);
           console.log(res.data.token);
           window.localStorage.setItem("token", res.data.token);
           window.localStorage.setItem("auth", "true");
+          window.localStorage.setItem("name", state.name);
 
-          navigate("/volunteer");
+          navigate("/home");
           setLogin(res.data.message);
+          window.location.reload();
         }
 
         console.log(res);
@@ -43,45 +52,39 @@ function SignupPage() {
       })
       .catch((err) => {
         console.log(err);
+        setLogin("User already Exists", err.message);
 
         // handle error
       });
   };
 
-  const handleSubmitorg = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/api/auth/volunteer/signup", state)
-      .then((res) => {
-        if (res.data.message) {
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
-          navigate("/volunteer");
-          setLoginorg(res.data.message);
-        }
-
-        console.log(res);
-        // handle success
-      })
-      .catch((err) => {
-        console.log(err);
-
-        // handle error
-      });
+  const handleType = (e) => {
+    setType(e.target.value);
   };
-
   //create a drop down with 2 options
 
   return (
     <div className="signupcontainer">
+      <div className="Aboutcard">
+        <h1>Bon Appetit</h1>
+        <h2>Where Hunger Stops.</h2>
+
+        <button>About us </button>
+      </div>
       <div className="signupcard">
         <form className="signupform" onSubmit={handleSubmit1}>
-          <h5 className="signupheading">
-            Sign up for Volunteers
-          </h5>
-          <div>
-            <label className="">
-            </label>
+          <h5 className="signupheading">Sign up </h5>
+          <div className="asdf">
+            <label className=""></label>
+            <input
+              type="name"
+              name="name"
+              placeholder="John Doe"
+              value={state.name}
+              onChange={handleChange}
+              className=""
+              required
+            />
             <input
               type="email"
               name="email"
@@ -91,64 +94,12 @@ function SignupPage() {
               className=""
               required
             />
-          </div>
-          <div>
-           
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={state.password}
-              onChange={handleChange}
-              className=""
-              required
-            />
-          </div>
-          
-          <button
-            type="submit"
-            className=""
-          >
-            Signup
-          </button>
-          <div className="alreadyaccou">
-            Already have account?{" "}
-            <a
-              href="#"
-              className=""
-            >
-              Login
-            </a>
-          </div>
-             <div>
-        <h1>{login}</h1>
-      </div>
-        </form>
-      
-      </div>
-     
+            <label for="dog-names">I am a </label>
+            <select name="type" id="dog-names" onChange={handleType}>
+              <option value="volunteer">Volunteer</option>
+              <option value="org">Organization</option>
+            </select>
 
-      <div className="signupcard">
-        <form className="signupform" onSubmit={handleSubmitorg}>
-          <h5 className="signupheading">
-            Sign Up For Contributers
-          </h5>
-          <div>
-           
-            <input
-              type="email"
-              name="email"
-              placeholder="abc@gmail.com"
-              value={state.username}
-              onChange={handleChange}
-              className=""
-              required
-              def
-              
-            />
-          </div>
-          <div>
-            
             <input
               type="password"
               name="password"
@@ -158,27 +109,24 @@ function SignupPage() {
               className=""
               required
             />
-          </div>
-         
-          <button
-            type="submit"
-            className=""
-          >
-            Signup
-          </button>
-          <div className="">
-            Already have account?{" "}
-            <a
-              href="#"
-              className=""
-            >
-              Login
-            </a>
+
+            <button type="submit" className="">
+              Signup
+            </button>
+            <div className="alreadyaccou">
+              Already have account?{" "}
+              <Link to="/login" className="">
+                Login
+              </Link>
+            </div>
+
+            <p className="text-black">{login}</p>
           </div>
         </form>
       </div>
+
       <div>
-        <h1>{loginorg}</h1>
+        <p>{loginorg}</p>
       </div>
     </div>
   );
