@@ -10,8 +10,45 @@ import { TbSquareDot } from "react-icons/tb";
 export default function FeaturedInfo() {
   const token = window.localStorage.getItem("token");
   const [data, setData] = useState([]);
+  const [q, setQ] = useState("");
+  //     set search parameters
+  //     we only what to search countries by capital and name
+  //     this list can be longer if you want
+  //     you can search countries even by their population
+  // just add it to this array
+  const [searchParam] = useState(["city", "city"]);
+
   const config = {
     headers: { Authorization: `Bearer ${token}` },
+  };
+
+  const acceptRequest = (id) => {
+    axios
+      .put(
+        `https://bon-appetit-server.alapanoski.repl.co/api/post/acceptReq/${id}`,id,config)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(typeof(id),id);
+        console.log(err);
+      });
+  };
+
+  const acceptDelivery = (id) => {
+    axios
+      .put(
+        `https://bon-appetit-server.alapanoski.repl.co/api/post/deliveryReq/${id}`,
+        id,
+        config
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(typeof id, id);
+        console.log(err);
+      });
   };
 
   const getPosts = async () => {
@@ -29,6 +66,16 @@ export default function FeaturedInfo() {
       });
   };
 
+  function search(items) {
+    return items.filter((item) => {
+      return searchParam.some((newItem) => {
+        return (
+          item[newItem].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+        );
+      });
+    });
+  }
+
   useEffect(() => {
     getPosts();
   }, []);
@@ -37,15 +84,19 @@ export default function FeaturedInfo() {
     <div className="featured">
       <div className="featuredItem1">
         <div className="searchBox">
-          <input placeholder="Search"></input>
+          <input
+            placeholder="Location:"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+          ></input>
           <button>Search</button>
         </div>
         <div className="foodCardsection">
-          {data
+          {search(data)
             .slice(0)
             .reverse()
             .map((item) => (
-              <div>
+              <div key={item._id}>
                 <div className="foodCard">
                   <div className="foodCardTop">
                     <div className="foodCardTopLeft">
@@ -113,9 +164,21 @@ export default function FeaturedInfo() {
                         </div>
 
                         <div className="foodinfobottombutton">
-                          <button className="foodinfobutton">Accept</button>
-                          <button className="foodinfobutton">
-                            Deliver This
+                          <button
+                            className="foodinfobutton"
+                            key={item._id}
+                            // onClick={() => acceptRequest(item._id)}
+                            disabled={item.isAccepted}
+                          >
+                            {item.isAccepted ? "Accepted " : "Accept"}
+                          </button>
+                          <button
+                            className="foodinfobutton"
+                            key={item._id}
+                            //onClick={() => acceptDelivery(item._id)}
+                            disabled={item.isDelivery}
+                          >
+                            {item.isDelivery ? "Delivered" : "Deliver"}
                           </button>
                         </div>
                       </div>
