@@ -1,72 +1,167 @@
-Hosted Link: 
 
-# Getting Started with Create React App
+<a name="readme-top"></a>
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+*** or simply open an issue with the tag "enhancement".
+*** Don't forget to give the project a star!
+*** Thanks again! Now go create something AMAZING! :D
+-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- PROJECT LOGO -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="logobonappetit.jpeg" alt="Logo" width="80" height="80">
+  </a>
 
-### `npm test`
+  <h1 align="center">Bon Appetit</h1>
+  <h2 align="center"> Where Hunger Stops.</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <p align="center">
+    A platform for the good-hearted!
+    <br/>
+    <a href="https://bonappletea.netlify.app"><strong>Check Out Our Web App. »</strong></a>
+    <br />
+    <br />
+  
+  </p>
+</div>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- ABOUT THE PROJECT -->
+## About The Project
+ <img src="readmecover.jpeg" alt="Logo" >
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Did you know that about 40 % of the food produced in India is wasted?
+Despite adequate food production, the UN has reported that about 190 million Indians remain undernourished. It is further estimated that the
+value of food wastage in India is around ₹92,000 crores per annum.
+These are some bleak statistics, but they should help us realise the magnitude of the problem of food waste, as much as inequity, in India.
+The world recognises that no truly sustainable and developed country can exist without tackling the issue of food waste, and while the challenge
+in front of us may be monumental, some steps need to be taken sooner than others.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This is why we came up with the idea of Bon Appetit.
+Bon Appetit is a small intiative trying to solve the problems of food wastage and hunger by providing a platform which connects people with excess food or people who are willing to contribute food to Non-Profit-Organizations.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+People who are willing to donate food have said to have faced the following problems
 
-### Code Splitting
+* They do not know many organizations who accepts food donations.
+* They do not know how to find a nearby organization.
+* Transportation difficulties.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Our platform aims to solve all these problems by 
+* Making the nearby NGO's visible to all.
+* The people can create requests on how much availabe food they have and the organizations can accept it.
+* Delivery is also done by volunteers. (Or using other delivery partners)
+* Organizations can create request on how much food they need.
+* Top Contributers get their name on the leaderboard.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Built With
+[![My Skills](https://skills.thijs.gg/icons?i=react,mongodb,css,nodejs,figma,netlify&theme=light)](https://skills.thijs.gg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img src="https://img.shields.io/badge/replit-667881?style=for-the-badge&logo=replit&logoColor=white"></img>
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+- [x] Email sent on accepting request.
+- [] Add Upload photo feature
+- [] Add map feature
+- [] Add Multi language support
+
+See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Jozef Antony - [@jzf21](https://github.com/jzf21) - jozefneelamkavil2003@gmail.com<br/>
+
+Nazim Filzer - [@NzM](https://github.com/NzM) - nazimfilzer@gmail.com<br/>
+
+Allen Shibu - [@alapanoski](https://github.com/alapanoski) - allenshibu@outlook.com<br/>
+
+Jamal J - [@jamaljm](https://github.com/jamaljm) - jamalvga2002@example.com
+
+Project Link: [https://github.com/jamaljm/BonAppetit](https://github.com/jamaljm/BonAppetit)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+
+
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+

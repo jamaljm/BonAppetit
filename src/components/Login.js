@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import "./signin.css";
+
 function Login() {
   const navigate = useNavigate();
   const [state, setState] = useState({
@@ -9,7 +11,9 @@ function Login() {
     password: "",
   });
 
+  const [type, setType] = useState("volunteer");
   const [login, setLogin] = useState("");
+  const [token, setToken] = useState("");
   const [loginorg, setLoginorg] = useState("");
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,65 +23,55 @@ function Login() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit1 = (e) => {
     e.preventDefault();
-    navigate("/dashboard");
-    window.location.reload();
+    console.log(type, state);
     axios
-      .post("http://localhost:5000/api/auth/volunteer/login", state)
+      .post(
+        "https://bon-appetit-server.alapanoski.repl.co/api/auth/" +
+          type +
+          "/login",
+        state
+      )
       .then((res) => {
         if (res.data.message) {
+          setToken(res.data.token);
+          console.log(res.data.token);
+          window.localStorage.setItem("token", res.data.token);
+          window.localStorage.setItem("auth", "true");
+          window.localStorage.setItem("name", res.data.user.name);
+
+          navigate("/home");
           setLogin(res.data.message);
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
-          navigate("/dashboard");
+          window.location.reload();
         }
 
         console.log(res);
         // handle success
       })
       .catch((err) => {
+        setLogin("Invalid Credentials");
         console.log(err);
 
         // handle error
       });
   };
 
-  const handleSubmitorg = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:5000/api/auth/org/login", state)
-      .then((res) => {
-        if (res.data.message) {
-          setLoginorg(res.data.message);
-          window.localStorage.setItem("token", res.data.token);
-          window.localStorage.setItem("auth", "true");
-          navigate("/dashboard");
-        }
-
-        console.log(res);
-        // handle success
-      })
-      .catch((err) => {
-        console.log(err);
-
-        // handle error
-      });
+  const handleType = (e) => {
+    setType(e.target.value);
   };
-
   //create a drop down with 2 options
 
   return (
-    <div className=" flex  items-center justify-center ">
-      <div className="">
-        <form className="" onSubmit={handleSubmit}>
-          <h5 className="">Sign in to our platform</h5>
-          <div>
-            <label className="">Your email</label>
+    <div className="signupcontainer">
+      <div className="signupcard">
+        <form className="signupform" onSubmit={handleSubmit1}>
+          <h5 className="signupheading">Login </h5>
+          <div className="asdf">
             <input
               type="email"
               name="email"
-              placeholder="First Name"
+              placeholder="abc@gmail.com"
               value={state.username}
               onChange={handleChange}
               className=""
@@ -85,9 +79,6 @@ function Login() {
             />
           </div>
           <div>
-            <label for="password" className="">
-              Your password
-            </label>
             <input
               type="password"
               name="password"
@@ -98,87 +89,22 @@ function Login() {
               required
             />
           </div>
-          <div className="">
-            <div className="">
-              <div className="">
-                <input id="remember" type="checkbox" value="" className="" />
-              </div>
-              <label for="remember" className="">
-                Remember me
-              </label>
-            </div>
-            <a href="#" className="">
-              Lost Password?
-            </a>
-          </div>
+
           <button type="submit" className="">
-            Login to your account
+            Login
           </button>
-          <div className="">
-            Not registered?{" "}
-            <a href="#" className="">
-              Create account
-            </a>
+          <div className="alreadyaccou">
+            New here?{" "}
+            <Link to="/" className="">
+              Signup
+            </Link>
+          </div>
+          <div>
+            <h1>{login}</h1>
           </div>
         </form>
-      </div>
-      <div>
-        <h1>{login}</h1>
       </div>
 
-      <div className="">
-        <form className="" onSubmit={handleSubmitorg}>
-          <h5 className="">Sign in to our platform</h5>
-          <div>
-            <label className="">Your email</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="First Name"
-              value={state.username}
-              onChange={handleChange}
-              className=""
-              required
-            />
-          </div>
-          <div>
-            <label for="password" className="">
-              Your password
-            </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={state.password}
-              onChange={handleChange}
-              className=""
-              required
-            />
-          </div>
-          <div className="">
-            <div className="">
-              <div className="">
-                <input id="remember" type="checkbox" value="" className="" />
-              </div>
-              <label for="remember" className="">
-                Remember me
-              </label>
-            </div>
-            <a href="#" className="">
-              Lost Password?
-            </a>
-          </div>
-          <button type="submit" className="">
-            Login to your account
-          </button>
-          <div className="">
-            Not registered?{" "}
-            <a href="#" className="">
-              Create account
-            </a>
-          </div>
-        </form>
-      </div>
       <div>
         <h1>{loginorg}</h1>
       </div>
