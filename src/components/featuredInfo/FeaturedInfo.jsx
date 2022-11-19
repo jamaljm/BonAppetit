@@ -122,7 +122,7 @@ export default function FeaturedInfo() {
                   <div className="foodCardBottom">
                     <div className="foodCardBottomLeft">
                       <img
-                        src="https://images.pexels.com/photos/6260921/pexels-photo-6260921.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        src={item.imageUrl}
                         alt=""
                         className="foodimage"
                       />

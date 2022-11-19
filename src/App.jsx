@@ -17,6 +17,8 @@ import {
 import { useState } from "react";
 import Landingpage from "./components/Landingpage.js/Landingpage";
 import { Dashboard } from "@material-ui/icons";
+import { EditProfile } from "./components/EditProfile/EditProfile";
+import GetImages from "./components/GetImages";
 
 function App() {
   const [auth, setAuth] = useState(
@@ -28,6 +30,7 @@ function App() {
   return (
     <>
       <div className="App">
+        {/* <GetImages/> */}
         {auth && <Navbar />}
         <div className="container">
           {auth && <Sidebar />}
@@ -39,6 +42,7 @@ function App() {
             ) : (
               <Route exact path="/" element={<Home />} />
             )}
+            <Route path="/profile" element={<EditProfile/>}/>
 
             {<Route path="/volunteer" element={<VolunteerForm />} />}
             {!auth && <Route  path="/login" element={<Login />} />}

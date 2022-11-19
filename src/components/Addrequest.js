@@ -3,13 +3,59 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./addrequest.css";
 import { Add, Close } from "@material-ui/icons";
-import {AiFillCaretDown, AiFillCloseCircle, AiOutlineClose} from 'react-icons/ai'
+import {
+  AiFillCaretDown,
+  AiFillCloseCircle,
+  AiOutlineClose,
+} from "react-icons/ai";
 
 const Addrequest = () => {
+  const token = window.localStorage.getItem("token");
+  const [file, setFile] = useState();
+  const [caption, setCaption] = useState("");
+  const [id, setId] = useState("");
   const navigate = useNavigate();
   const [type, setType] = useState("true");
+  const configimage = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data"
+    },
+  };
+  //image upload function with axios and aws s3
+  const submit = async (event) => {
+    event.preventDefault();
 
-  const token = window.localStorage.getItem("token");
+    const formData = new FormData();
+    formData.append("file", file);
+    console.log(file);
+    console.log(formData);
+
+    await axios
+      .put(
+        `http://localhost:5000/api/post/image/${id}`,
+        formData,
+        configimage
+      )
+      .then((res) => {
+        if (res.data.message) {
+          console.log(res.data.message);
+
+          
+          setId(res.data.data._id);
+        }
+
+        console.log(res);
+        navigate("/home");
+        // handle success
+      })
+      .catch((err) => {
+        console.log(err);
+
+        // handle error
+      });
+  };
+
   const config = {
     headers: { Authorization: `Bearer ${token}` },
   };
@@ -52,10 +98,11 @@ const Addrequest = () => {
           console.log(res.data.message);
 
           setLogin(res.data.message);
+          setId(res.data.data._id);
         }
 
         console.log(res);
-        navigate("/home");
+     
         // handle success
       })
       .catch((err) => {
@@ -152,6 +199,16 @@ const Addrequest = () => {
             />
             <button type="submit">Submit</button>
             {login}
+          </form>
+          <form onSubmit={submit} encType="multipart/form-data">
+            <input
+              onChange={(e) => setFile(e.target.files[0])}
+              type="file"
+              name="file"
+              accept="image/*"
+            ></input>
+
+            <button type="submit">Submit</button>
           </form>
         </div>
       )}
